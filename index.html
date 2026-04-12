@@ -42,7 +42,21 @@ body {
 .name { font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:300; letter-spacing:3px; color:var(--brown); margin-bottom:8px; text-align:center; }
 .tagline { font-size:12px; color:var(--text-light); letter-spacing:1.5px; margin-bottom:28px; text-align:center; font-weight:300; }
 .divider { width:40px; height:1px; background:var(--gold); margin-bottom:28px; opacity:0.6; }
-.section-label { font-size:10px; letter-spacing:3px; color:var(--brown-light); text-transform:uppercase; margin-bottom:12px; align-self:flex-start; font-family:'Cormorant Garamond',serif; }
+.section-label {
+  font-size:14px; letter-spacing:1.5px;
+  font-family:'Noto Serif TC', serif;
+  font-weight:700;
+  border-radius:20px;
+  padding:7px 18px;
+  margin-bottom:14px;
+  align-self:flex-start;
+  box-shadow:0 2px 8px rgba(100,70,40,0.12);
+}
+/* 各主題標題顏色 */
+.label-social  { background:linear-gradient(135deg,#c4a882,#b8956a); color:#fff5e8; }
+.label-course  { background:linear-gradient(135deg,#8a6840,#7a5c30); color:#fff5e8; }
+.label-visit   { background:linear-gradient(135deg,#6e5438,#5c4428); color:#ffe8d0; }
+.label-address { background:linear-gradient(135deg,#a08060,#8a6848); color:#fff5e8; }
 
 .links { width:100%; display:flex; flex-direction:column; gap:10px; margin-bottom:24px; }
 .link-btn {
@@ -53,12 +67,16 @@ body {
   cursor:pointer; font-family:'Noto Serif TC',serif; width:100%; text-align:left;
 }
 .link-btn:hover { border-color:var(--gold); box-shadow:0 4px 20px rgba(201,169,110,0.18); transform:translateY(-1px); }
-.link-icon { width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
-.icon-ig { background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
-.icon-line { background:#06C755; }
-.icon-course { background:linear-gradient(135deg,var(--gold-light),var(--gold)); }
-.icon-qa { background:linear-gradient(135deg,#e8ddd0,#d4c4b0); }
-.icon-booking { background:linear-gradient(135deg,#d4e8d0,#a8d4a0); }
+.link-icon {
+  width:38px; height:38px; border-radius:10px;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+  background:linear-gradient(135deg, #ede0cc, #dcc9a8);
+  border:1px solid rgba(180,148,100,0.25);
+  color:#8a6840;
+}
+.link-icon svg { width:20px; height:20px; }
+.icon-ig {} .icon-line {} .icon-course {} .icon-qa {} .icon-booking {}
 .link-text { display:flex; flex-direction:column; gap:2px; }
 .link-title { font-size:14px; font-weight:400; color:var(--text); letter-spacing:0.5px; }
 .link-sub { font-size:11px; color:var(--text-light); letter-spacing:0.3px; }
@@ -66,14 +84,14 @@ body {
 
 .map-section { width:100%; margin-bottom:24px; }
 .map-container { width:100%; border-radius:16px; overflow:hidden; border:1px solid rgba(201,169,110,0.25); box-shadow:0 2px 12px rgba(122,98,72,0.06); background:white; }
-.map-header { display:flex; align-items:center; gap:10px; padding:13px 16px; border-bottom:1px solid rgba(201,169,110,0.15); }
-.map-icon { width:38px; height:38px; border-radius:10px; background:linear-gradient(135deg,#b8d4e8,#8ab8d4); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+.map-header { display:flex; align-items:center; gap:10px; padding:13px 16px;  }
+.map-icon { width:38px; height:38px; border-radius:10px; background:linear-gradient(135deg,#ede0cc,#dcc9a8); border:1px solid rgba(180,148,100,0.25); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:#8a6840; } .map-icon svg { width:20px; height:20px; }
 .map-info { display:flex; flex-direction:column; gap:2px; flex:1; min-width:0; }
 .map-title { font-size:14px; font-weight:400; color:var(--text); letter-spacing:0.5px; }
 .map-addr { font-size:11px; color:var(--text-light); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .map-link-btn { font-size:11px; color:var(--gold); text-decoration:none; border:1px solid var(--gold-light); border-radius:20px; padding:4px 10px; white-space:nowrap; transition:all 0.2s; flex-shrink:0; }
 .map-link-btn:hover { background:var(--gold-light); }
-.map-embed { width:100%; height:200px; border:none; display:block; }
+
 .footer { margin-top:8px; font-size:10px; color:var(--text-light); letter-spacing:2px; text-align:center; opacity:0.5; }
 
 /* ── COURSE PAGE ── */
@@ -168,57 +186,54 @@ body {
   <div class="tagline">新北 專業美甲｜課程・預約</div>
   <div class="divider"></div>
 
-  <div class="section-label">找到我們</div>
+  <div class="section-label label-social">找到我們</div>
   <div class="links">
     <a class="link-btn" href="https://www.instagram.com/qk_nail_art" target="_blank">
-      <div class="link-icon icon-ig">📷</div>
+      <div class="link-icon icon-ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#7a6248" stroke="none"/></svg></div>
       <div class="link-text"><span class="link-title">Instagram</span><span class="link-sub">@qk_nail_art</span></div>
       <span class="link-arrow">›</span>
     </a>
     <a class="link-btn" href="https://line.me/R/ti/p/@037ixlky" target="_blank">
-      <div class="link-icon icon-line">💬</div>
-      <div class="link-text"><span class="link-title">LINE 官方帳號（預約請加入Line）</span><span class="link-sub">@037ixlky</span></div>
+      <div class="link-icon icon-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5C21 16.75 16.97 21 12 21c-1.5 0-2.9-.35-4.14-.97L3 21l1.04-3.7A9.1 9.1 0 0 1 3 11.5C3 6.25 7.03 2 12 2s9 4.25 9 9.5z"/><path d="M8 10.5h.01M12 10.5h.01M16 10.5h.01" stroke-width="2.5"/></svg></div>
+      <div class="link-text"><span class="link-title">LINE 官方帳號</span><span class="link-sub">@037ixlky</span></div>
       <span class="link-arrow">›</span>
     </a>
   </div>
 
-  <div class="section-label">課程資訊</div>
+  <div class="section-label label-course">課程資訊</div>
   <div class="links">
     <button class="link-btn" onclick="showPage('page-course')">
-      <div class="link-icon icon-course">🎓</div>
+      <div class="link-icon icon-course"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M2 8v6"/><path d="M6 10.5v5.5a6 6 0 0 0 12 0v-5.5"/></svg></div>
       <div class="link-text"><span class="link-title">課程介紹</span><span class="link-sub">一日體驗・專業課程</span></div>
       <span class="link-arrow">›</span>
     </button>
     <button class="link-btn" onclick="showPage('page-qa')">
-      <div class="link-icon icon-qa">❓</div>
+      <div class="link-icon icon-qa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="17" r=".5" fill="#7a6248" stroke="none"/></svg></div>
       <div class="link-text"><span class="link-title">常見問題 QA</span><span class="link-sub">報名・上課相關說明</span></div>
       <span class="link-arrow">›</span>
     </button>
   </div>
 
-  <div class="section-label">預約系統教學</div>
+  <div class="section-label label-visit">來找我們</div>
   <div class="links">
     <a class="link-btn" href="#" target="_blank">
-      <div class="link-icon icon-booking">📅</div>
+      <div class="link-icon icon-booking"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></div>
       <div class="link-text"><span class="link-title">預約系統教學</span><span class="link-sub">如何預約？影片說明</span></div>
       <span class="link-arrow">›</span>
     </a>
   </div>
 
-  <div class="section-label">地址 &amp; 導航</div>
+  <div class="section-label label-address">地址 &amp; 導航</div>
   <div class="map-section">
     <div class="map-container">
       <div class="map-header">
-        <div class="map-icon">📍</div>
+        <div class="map-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
         <div class="map-info">
           <span class="map-title">QK Nail Art</span>
           <span class="map-addr">新北市三重區三和路四段231巷9號1樓</span>
         </div>
         <a class="map-link-btn" href="https://maps.app.goo.gl/cQND3BAunXFriYbe9?g_st=ic" target="_blank">導航 →</a>
       </div>
-      <iframe class="map-embed"
-        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY&q=新北市三重區三和路四段231巷9號1樓&language=zh-TW"
-        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
   <div class="footer">QK NAIL ART · 新北市三重</div>
@@ -330,7 +345,7 @@ body {
         <span class="qa-chevron">⌄</span>
       </div>
       <div class="qa-divider"></div>
-      <div class="qa-a">上課地點位於新北市三重區三和路四段231巷9號1樓，靠近「捷運徐匯中學站」，詳細導航請見主頁地圖。</div>
+      <div class="qa-a">上課地點位於新北市三重區三和路四段231巷9號1樓，靠近捷運三重站，詳細導航請見主頁地圖。</div>
     </div>
 
     <div class="qa-item">
