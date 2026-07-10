@@ -213,71 +213,147 @@ body {
 
 .qa-empty { display:none; text-align:center; color:var(--text-light); font-size:13px; line-height:1.8; padding:30px 10px; }
 
-/* ── 測驗入口（課程 FAQ 頁上方的小提示按鈕）── */
+/* ── 首頁主 CTA（整頁唯一實心按鈕）── */
+.primary-cta {
+  display:flex; align-items:center; justify-content:center; gap:9px;
+  width:100%; background:linear-gradient(135deg,#c9a96e,#b08d5a);
+  color:#fff8ec; border-radius:30px; padding:15px;
+  font-family:'Noto Serif TC',serif; font-size:15px; letter-spacing:2.5px;
+  text-decoration:none; box-shadow:0 6px 18px rgba(201,169,110,0.35);
+  margin-bottom:9px; transition:all 0.25s;
+}
+.primary-cta:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(201,169,110,0.45); }
+.primary-cta svg { width:19px; height:19px; }
+.primary-note { font-size:10.5px; color:var(--text-light); letter-spacing:1.5px; margin-bottom:26px; text-align:center; }
+
+/* ── 眉標式區塊標題（取代彩色膠囊，更安靜有質感）── */
+.sec-head { width:100%; margin:4px 0 12px; }
+.sec-eyebrow { font-family:'Cormorant Garamond',serif; font-size:11px; font-weight:600; letter-spacing:3.5px; color:var(--gold); margin-bottom:3px; }
+.sec-title-row { display:flex; align-items:center; gap:12px; }
+.sec-zh { font-size:15px; color:var(--brown); letter-spacing:2.5px; white-space:nowrap; }
+.sec-line { flex:1; height:1px; background:linear-gradient(90deg,var(--gold-light),transparent); }
+
+/* ── 作品帶（點任一格連到 IG）── */
+.works-strip { width:100%; display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:28px; }
+.work-tile {
+  aspect-ratio:1; border-radius:12px; overflow:hidden;
+  border:1px solid rgba(201,169,110,0.25);
+  background:linear-gradient(135deg,#f0e4d4,#e6d5bd);
+  display:flex; align-items:center; justify-content:center;
+  font-size:19px; text-decoration:none;
+  box-shadow:0 2px 8px rgba(122,98,72,0.07); transition:all 0.2s;
+}
+.work-tile:hover { transform:translateY(-2px); box-shadow:0 5px 14px rgba(201,169,110,0.25); border-color:var(--gold); }
+.work-tile img { width:100%; height:100%; object-fit:cover; display:block; }
+.work-tile.more { flex-direction:column; gap:3px; font-family:'Noto Serif TC',serif; font-size:10px; letter-spacing:1px; color:#7a5c30; background:linear-gradient(135deg,#e8d5b0,#d9c194); }
+.work-tile.more b { font-size:15px; font-weight:400; }
+
+/* ── 課程小卡（帶縮圖）── */
+.course-mini {
+  width:100%; display:flex; align-items:center; gap:14px;
+  background:white; border:1px solid rgba(201,169,110,0.25); border-radius:16px;
+  padding:12px; cursor:pointer; text-align:left;
+  font-family:'Noto Serif TC',serif;
+  box-shadow:0 2px 12px rgba(122,98,72,0.06); transition:all 0.25s;
+}
+.course-mini:hover { border-color:var(--gold); transform:translateY(-1px); box-shadow:0 5px 18px rgba(201,169,110,0.2); }
+.cm-thumb { width:76px; height:76px; border-radius:12px; overflow:hidden; flex-shrink:0; background:linear-gradient(135deg,#ede0cc,#dcc9a8); }
+.cm-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+.cm-body { flex:1; min-width:0; }
+.cm-title { font-size:15px; color:var(--brown); letter-spacing:1px; margin-bottom:3px; }
+.cm-sub { font-size:11px; color:var(--text-light); letter-spacing:0.3px; margin-bottom:7px; }
+.cm-tags { display:flex; gap:5px; flex-wrap:wrap; }
+.cm-tag { font-size:10px; background:var(--gold-light); color:var(--brown); border-radius:12px; padding:2.5px 9px; letter-spacing:0.5px; }
+.cm-arrow { color:var(--gold); font-size:18px; opacity:0.7; flex-shrink:0; }
+
+/* ── 測驗入口（課程 FAQ 頁上方的小提示按鈕，與測驗頁同色系）── */
 .qz-inline-entry {
   width:100%; display:flex; align-items:center; justify-content:space-between; gap:8px;
-  background:linear-gradient(135deg,#faf5ea,#f3ead6);
-  border:1px solid rgba(201,169,110,0.4); border-radius:14px;
+  background:linear-gradient(135deg,#fbf0f2,#f7efe6);
+  border:1px solid #e4b8c4; border-radius:14px;
   padding:13px 16px; margin-bottom:20px; cursor:pointer;
-  font-family:'Noto Serif TC',serif; font-size:13px; color:var(--brown);
-  letter-spacing:0.5px; box-shadow:0 2px 12px rgba(201,169,110,0.12); transition:all 0.2s;
+  font-family:'Noto Serif TC',serif; font-size:13px; color:#b25f7c;
+  letter-spacing:0.5px; box-shadow:0 2px 12px rgba(217,139,163,0.14); transition:all 0.2s;
 }
-.qz-inline-entry:hover { border-color:var(--gold); transform:translateY(-1px); box-shadow:0 4px 16px rgba(201,169,110,0.2); }
-.qz-inline-arrow { color:var(--gold); font-size:18px; }
+.qz-inline-entry:hover { border-color:#d98ba3; transform:translateY(-1px); box-shadow:0 4px 16px rgba(217,139,163,0.25); }
+.qz-inline-arrow { color:#d98ba3; font-size:18px; }
 
-/* ── QUIZ PAGE ── */
-.qz-nails { display:flex; justify-content:center; gap:9px; margin-bottom:24px; }
+/* ── QUIZ PAGE（奶茶玫瑰配色：乾燥玫瑰 × 奶油 × 柔金，活潑但與米咖主調和諧）── */
+body.quiz-mode { background:linear-gradient(160deg,#fbf0f1 0%,#f8f0e8 50%,#f5efe4 100%); }
+#page-quiz .page-title { color:#b25f7c; }
+#page-quiz .page-sub { color:#c39aa8; }
+#page-quiz .divider { width:70px; height:2px; opacity:1; border-radius:2px; background:linear-gradient(90deg,#d98ba3,#c9a96e,#a9cbb7); }
+#page-quiz .back-btn:hover { color:#b25f7c; }
+
+.qz-nails { display:flex; justify-content:center; gap:9px; margin-bottom:22px; }
 .qz-nail {
-  width:22px; height:29px;
+  width:23px; height:30px;
   border-radius:50% 50% 22% 22% / 62% 62% 22% 22%;
-  background:#fff; border:1.5px solid var(--gold-light);
-  position:relative; overflow:hidden; transition:transform 0.35s cubic-bezier(.34,1.56,.64,1);
+  background:#fff; border:1.5px solid #ebccd5;
+  position:relative; overflow:hidden; transition:transform 0.35s cubic-bezier(.34,1.56,.64,1), border-color 0.3s, box-shadow 0.3s;
 }
-.qz-nail .qz-p { position:absolute; left:0; right:0; bottom:0; top:100%; background:linear-gradient(180deg,var(--gold-light),var(--gold)); transition:top 0.45s ease; }
+.qz-nail .qz-p { position:absolute; left:0; right:0; bottom:0; top:100%; background:var(--nail-c,#e4a3b6); transition:top 0.45s ease; }
 .qz-nail.done .qz-p { top:0; }
-.qz-nail.active { transform:translateY(-3px) scale(1.06); border-color:var(--gold); }
+.qz-nail.active { transform:translateY(-4px) scale(1.08); border-color:#d98ba3; box-shadow:0 5px 12px rgba(217,139,163,0.35); }
 
 .qz-body { width:100%; display:flex; flex-direction:column; align-items:stretch; }
-.qz-count { font-family:'Cormorant Garamond',serif; font-size:14px; letter-spacing:1.5px; color:var(--gold); text-align:center; margin-bottom:6px; }
-.qz-count b { color:var(--brown); font-size:17px; }
-.qz-count span { color:var(--text-light); }
-.qz-q { font-size:17px; color:var(--brown); text-align:center; line-height:1.6; margin-bottom:22px; letter-spacing:0.5px; }
+.qz-count { font-family:'Cormorant Garamond',serif; font-size:14px; letter-spacing:1.5px; color:#c39aa8; text-align:center; margin-bottom:6px; }
+.qz-count b { color:#b25f7c; font-size:17px; }
+.qz-count span { color:#cbb3a4; }
+.qz-q { font-size:17px; color:#5f4a4e; text-align:center; line-height:1.6; margin-bottom:18px; letter-spacing:0.5px; }
+.qz-hint { font-size:11.5px; color:#bb9aa0; text-align:center; letter-spacing:0.5px; margin-bottom:16px; transition:transform 0.15s; }
+.qz-hint.pulse { transform:scale(1.08); color:#b25f7c; }
 .qz-opts { display:flex; flex-direction:column; gap:10px; width:100%; }
 .qz-opt {
   display:flex; align-items:center; gap:12px;
-  background:white; border:1px solid rgba(201,169,110,0.28); border-radius:14px;
+  background:rgba(255,255,255,0.92); border:1.5px solid #eddfe0; border-radius:16px;
   padding:14px 16px; text-align:left; font-family:'Noto Serif TC',serif;
-  font-size:14px; color:var(--text); cursor:pointer; line-height:1.5;
-  box-shadow:0 2px 12px rgba(122,98,72,0.05); transition:all 0.2s;
+  font-size:14px; color:#5f4a4e; cursor:pointer; line-height:1.5;
+  box-shadow:0 2px 12px rgba(178,95,124,0.07); transition:all 0.2s;
 }
-.qz-opt:hover { border-color:var(--gold); transform:translateY(-1px); box-shadow:0 4px 16px rgba(201,169,110,0.15); }
-.qz-opt .qz-dot { flex-shrink:0; width:18px; height:18px; border-radius:50%; border:1.5px solid var(--gold); position:relative; transition:0.2s; }
-.qz-opt.sel { border-color:var(--gold); background:linear-gradient(135deg,#faf5ea,#f3ead6); }
-.qz-opt.sel .qz-dot { background:var(--gold); border-color:var(--gold); }
-.qz-opt.sel .qz-dot::after { content:''; position:absolute; inset:0; margin:auto; width:6px; height:6px; background:#fff; border-radius:50%; }
-.qz-back { margin-top:18px; background:none; border:none; color:var(--text-light); font-family:'Noto Serif TC',serif; font-size:13px; cursor:pointer; align-self:flex-start; padding:6px 2px; }
-.qz-back:hover { color:var(--gold); }
+.qz-opt:hover { border-color:#e4b8c4; transform:translateY(-1px); box-shadow:0 4px 16px rgba(217,139,163,0.18); }
+/* 複選：勾選框樣式 */
+.qz-opt .qz-dot { flex-shrink:0; width:19px; height:19px; border-radius:6px; border:1.5px solid #e0b6c1; position:relative; transition:0.2s; background:#fff; }
+.qz-opt.sel { border-color:#d98ba3; background:linear-gradient(135deg,#fbf0f2,#f8f1e7); }
+.qz-opt.sel .qz-dot { background:linear-gradient(135deg,#d98ba3,#c9a96e); border-color:transparent; }
+.qz-opt.sel .qz-dot::after { content:'✓'; color:#fff; font-size:12px; font-weight:bold; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
+
+.qz-next {
+  margin-top:20px; width:100%; border:none; border-radius:30px; padding:15px;
+  font-family:'Noto Serif TC',serif; font-size:15px; letter-spacing:1.5px; color:#fff;
+  background:linear-gradient(135deg,#d98ba3,#c9a96e); cursor:pointer;
+  box-shadow:0 6px 18px rgba(217,139,163,0.35); transition:all 0.25s;
+}
+.qz-next:disabled { opacity:0.4; box-shadow:none; cursor:not-allowed; }
+.qz-next:not(:disabled):hover { transform:translateY(-2px); box-shadow:0 8px 22px rgba(217,139,163,0.45); }
+.qz-back { margin-top:14px; background:none; border:none; color:#bb9aa0; font-family:'Noto Serif TC',serif; font-size:13px; cursor:pointer; align-self:center; padding:6px 10px; }
+.qz-back:hover { color:#b25f7c; }
 .qz-back[hidden] { display:none; }
 
-.qz-result { display:none; width:100%; animation:fadeUp 0.5s ease both; }
-.qz-result.show { display:flex; flex-direction:column; }
-.qz-result-badge { font-family:'Cormorant Garamond',serif; font-size:12px; letter-spacing:3px; color:var(--gold); text-align:center; margin-bottom:8px; }
-.qz-result-title { font-family:'Noto Serif TC',serif; font-size:20px; color:var(--brown); text-align:center; line-height:1.5; margin-bottom:6px; }
-.qz-result-lead { font-size:12px; color:var(--text-light); text-align:center; letter-spacing:0.5px; margin-bottom:22px; }
-.qz-meter { display:flex; height:12px; border-radius:20px; overflow:hidden; border:1px solid rgba(201,169,110,0.3); background:#fff; margin-bottom:7px; }
+.qz-result { display:none; width:100%; }
+.qz-result.show { display:flex; flex-direction:column; animation:fadeUp 0.5s ease both; }
+.qz-result-badge { font-family:'Cormorant Garamond',serif; font-size:12px; letter-spacing:3px; text-align:center; margin-bottom:8px; background:linear-gradient(90deg,#d98ba3,#c9a96e); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.qz-result-title { font-family:'Noto Serif TC',serif; font-size:20px; color:#b25f7c; text-align:center; line-height:1.5; margin-bottom:6px; }
+.qz-result-lead { font-size:12px; color:#bb9aa0; text-align:center; letter-spacing:0.5px; margin-bottom:22px; }
+.qz-meter { display:flex; height:13px; border-radius:20px; overflow:hidden; border:1.5px solid #eddfe0; background:#fff; margin-bottom:7px; }
 .qz-meter i { display:block; width:0; transition:width 0.9s cubic-bezier(.4,0,.2,1); }
-.qz-day { background:linear-gradient(90deg,#e8d5b0,#c9a96e); }
-.qz-full { background:linear-gradient(90deg,#a08060,#7a5c30); }
-.qz-meter-labels { display:flex; justify-content:space-between; font-size:11px; color:var(--text-light); margin-bottom:22px; }
-.qz-meter-labels b { color:var(--brown); }
-.qz-why { background:linear-gradient(135deg,#f0e8d8,#e8d8c0); border:1px solid rgba(201,169,110,0.4); border-radius:16px; padding:18px; margin-bottom:14px; }
-.qz-why-tag { font-family:'Cormorant Garamond',serif; font-size:13px; font-weight:600; letter-spacing:1px; color:var(--brown); margin-bottom:8px; }
-.qz-why p { font-size:13px; color:var(--text); line-height:1.9; letter-spacing:0.3px; }
-.qz-alt { font-size:12px; color:var(--text-light); line-height:1.8; letter-spacing:0.3px; margin-bottom:18px; padding:0 2px; }
-.qz-course-link { width:100%; background:white; border:1px solid rgba(201,169,110,0.35); border-radius:14px; padding:14px; font-family:'Noto Serif TC',serif; font-size:14px; color:var(--brown); cursor:pointer; margin-bottom:10px; transition:all 0.2s; box-shadow:0 2px 12px rgba(122,98,72,0.06); }
-.qz-course-link:hover { border-color:var(--gold); transform:translateY(-1px); }
-.qz-retry { margin-top:8px; background:none; border:none; color:var(--text-light); font-family:'Noto Serif TC',serif; font-size:12px; letter-spacing:1px; cursor:pointer; padding:8px; align-self:center; }
-.qz-retry:hover { color:var(--gold); }
+.qz-day { background:linear-gradient(90deg,#f2d0da,#d98ba3); }
+.qz-full { background:linear-gradient(90deg,#e0cba3,#a5814f); }
+.qz-meter-labels { display:flex; justify-content:space-between; font-size:11px; color:#bb9aa0; margin-bottom:22px; }
+.qz-meter-labels b { color:#5f4a4e; }
+.qz-why { background:rgba(255,255,255,0.92); border:1.5px dashed #e4b8c4; border-radius:16px; padding:18px; margin-bottom:14px; }
+.qz-why-tag { font-family:'Noto Serif TC',serif; font-size:13px; font-weight:600; letter-spacing:1px; color:#b25f7c; margin-bottom:8px; }
+.qz-why p { font-size:13px; color:#5f4a4e; line-height:1.9; letter-spacing:0.3px; }
+.qz-alt { font-size:12px; color:#bb9aa0; line-height:1.8; letter-spacing:0.3px; margin-bottom:18px; padding:0 2px; }
+.qz-course-link { width:100%; background:#fff; border:1.5px solid #e0cba3; border-radius:14px; padding:14px; font-family:'Noto Serif TC',serif; font-size:14px; color:#a5814f; cursor:pointer; margin-bottom:10px; transition:all 0.2s; box-shadow:0 2px 12px rgba(201,169,110,0.12); }
+.qz-course-link:hover { border-color:#c9a96e; transform:translateY(-1px); box-shadow:0 4px 16px rgba(201,169,110,0.25); }
+.qz-retry { margin-top:8px; background:none; border:none; color:#bb9aa0; font-family:'Noto Serif TC',serif; font-size:12px; letter-spacing:1px; cursor:pointer; padding:8px; align-self:center; }
+.qz-retry:hover { color:#b25f7c; }
+
+/* 結果彩帶 */
+.qz-confetti { position:fixed; top:-14px; width:8px; height:13px; border-radius:2px; z-index:999; pointer-events:none; animation:qzFall linear forwards; }
+@keyframes qzFall { to { transform:translateY(105vh) rotate(680deg); opacity:0.85; } }
+@media (prefers-reduced-motion:reduce) { .qz-confetti { display:none; } .qz-nail, .qz-opt, .qz-next { transition:none; } }
 </style>
 </head>
 <body>
@@ -292,8 +368,97 @@ body {
   <div class="tagline">新北 專業美甲｜課程・預約</div>
   <div class="divider"></div>
 
-  <!-- 第一區：找到我們 -->
-  <div class="section-label label-address">找到我們</div>
+  <!-- 主 CTA：整頁唯一實心按鈕 -->
+  <a class="primary-cta" href="https://line.me/R/ti/p/@037ixlky" target="_blank">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5C21 16.75 16.97 21 12 21c-1.5 0-2.9-.35-4.14-.97L3 21l1.04-3.7A9.1 9.1 0 0 1 3 11.5C3 6.25 7.03 2 12 2s9 4.25 9 9.5z"/></svg>
+    LINE 預約・諮詢
+  </a>
+  <div class="primary-note">美甲預約｜課程報名｜專人回覆</div>
+
+  <div class="sec-head">
+    <div class="sec-eyebrow">WORKS</div>
+    <div class="sec-title-row"><span class="sec-zh">作品欣賞</span><span class="sec-line"></span></div>
+  </div>
+  <div class="links">
+    <a class="link-btn" href="https://www.instagram.com/qk_nail_art" target="_blank">
+      <div class="link-icon icon-ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#8a6840" stroke="none"/></svg></div>
+      <div class="link-text"><span class="link-title">Instagram</span><span class="link-sub">看更多作品與日常動態</span></div>
+      <span class="link-arrow">›</span>
+    </a>
+  </div>
+
+  <!-- 聯絡我們 -->
+  <div class="sec-head" id="sec-contact" style="scroll-margin-top:20px;">
+    <div class="sec-eyebrow">CONTACT</div>
+    <div class="sec-title-row"><span class="sec-zh">聯絡我們</span><span class="sec-line"></span></div>
+  </div>
+  <div class="links">
+    <a class="link-btn" href="https://line.me/R/ti/p/@037ixlky" target="_blank">
+      <div class="link-icon icon-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5C21 16.75 16.97 21 12 21c-1.5 0-2.9-.35-4.14-.97L3 21l1.04-3.7A9.1 9.1 0 0 1 3 11.5C3 6.25 7.03 2 12 2s9 4.25 9 9.5z"/><path d="M8 10.5h.01M12 10.5h.01M16 10.5h.01" stroke-width="2.5"/></svg></div>
+      <div class="link-text"><span class="link-title">LINE 官方帳號</span><span class="link-sub">預約 / 專人服務請加 LINE</span></div>
+      <span class="link-arrow">›</span>
+    </a>
+    <a class="link-btn" href="https://www.instagram.com/reel/DXJnY_vgZGH/?igsh=cTBsdHByc2p5bnoz" target="_blank">
+      <div class="link-icon icon-booking"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16"/></svg></div>
+      <div class="link-text"><span class="link-title">預約系統教學</span><span class="link-sub">如何使用預約系統？影片說明</span></div>
+      <span class="link-arrow">›</span>
+    </a>
+  </div>
+
+  <!-- 課程資訊 -->
+  <div class="sec-head" id="sec-course" style="scroll-margin-top:20px;">
+    <div class="sec-eyebrow">COURSES</div>
+    <div class="sec-title-row"><span class="sec-zh">課程資訊</span><span class="sec-line"></span></div>
+  </div>
+  <div class="links">
+    <button class="course-mini" onclick="showPage('page-fullcourse')">
+      <div class="cm-thumb"><img id="thumbFull" alt="美甲全科班縮圖"></div>
+      <div class="cm-body">
+        <div class="cm-title">美甲全科班</div>
+        <div class="cm-sub">從零到開業完整養成</div>
+        <div class="cm-tags"><span class="cm-tag">共 6 天</span><span class="cm-tag">最多一對二</span><span class="cm-tag">真人實作</span></div>
+      </div>
+      <span class="cm-arrow">›</span>
+    </button>
+    <button class="course-mini" onclick="showPage('page-course')">
+      <div class="cm-thumb"><img id="thumbOne" alt="美甲一日體驗班縮圖"></div>
+      <div class="cm-body">
+        <div class="cm-title">美甲一日體驗班</div>
+        <div class="cm-sub">零基礎歡迎・工具全包</div>
+        <div class="cm-tags"><span class="cm-tag">一日完成</span><span class="cm-tag">真甲實作</span><span class="cm-tag">結業證書</span></div>
+      </div>
+      <span class="cm-arrow">›</span>
+    </button>
+    <button class="link-btn" onclick="showPage('page-quiz')" style="background:linear-gradient(135deg,#fbf0f2,#f7efe6);border-color:#e4b8c4;">
+      <div class="link-icon icon-course" style="background:linear-gradient(135deg,#f2d8de,#e8d5b0);border-color:rgba(217,139,163,0.35);color:#b25f7c;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l1.9 1.9M16.5 16.5l1.9 1.9M18.4 5.6l-1.9 1.9M7.5 16.5l-1.9 1.9"/></svg></div>
+      <div class="link-text"><span class="link-title" style="color:#b25f7c;">我適合哪一種課？</span><span class="link-sub" style="color:#ab8f9a;">30 秒測驗・幫你選對課</span></div>
+      <span class="link-arrow" style="color:#d98ba3;">›</span>
+    </button>
+    <button class="link-btn" onclick="showPage('page-qa')">
+      <div class="link-icon icon-qa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="17" r=".5" fill="#8a6840" stroke="none"/></svg></div>
+      <div class="link-text"><span class="link-title">課程常見問題</span><span class="link-sub">報名・上課相關說明</span></div>
+      <span class="link-arrow">›</span>
+    </button>
+  </div>
+
+  <!-- 常見問題 -->
+  <div class="sec-head" id="sec-faq" style="scroll-margin-top:20px;">
+    <div class="sec-eyebrow">FAQ</div>
+    <div class="sec-title-row"><span class="sec-zh">常見問題</span><span class="sec-line"></span></div>
+  </div>
+  <div class="links">
+    <button class="link-btn" onclick="showPage('page-general-qa')">
+      <div class="link-icon icon-qa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="17" r=".5" fill="#8a6840" stroke="none"/></svg></div>
+      <div class="link-text"><span class="link-title">預約 / 到店常見問題</span><span class="link-sub">預約、施作、保固說明</span></div>
+      <span class="link-arrow">›</span>
+    </button>
+  </div>
+
+  <!-- 找到我們（收尾）-->
+  <div class="sec-head" id="sec-find" style="scroll-margin-top:20px;">
+    <div class="sec-eyebrow">FIND US</div>
+    <div class="sec-title-row"><span class="sec-zh">找到我們</span><span class="sec-line"></span></div>
+  </div>
   <div class="links">
     <div class="map-section" style="width:100%;margin-bottom:0;">
       <div class="map-container">
@@ -307,61 +472,6 @@ body {
         </div>
       </div>
     </div>
-    <a class="link-btn" href="https://www.instagram.com/reel/DXJnY_vgZGH/?igsh=cTBsdHByc2p5bnoz" target="_blank">
-      <div class="link-icon icon-booking"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16"/></svg></div>
-      <div class="link-text"><span class="link-title">預約系統教學</span><span class="link-sub">如何使用預約系統？影片說明</span></div>
-      <span class="link-arrow">›</span>
-    </a>
-  </div>
-
-  <!-- 第二區：聯絡我們 -->
-  <div class="section-label label-social">聯絡我們</div>
-  <div class="links">
-    <a class="link-btn" href="https://www.instagram.com/qk_nail_art" target="_blank">
-      <div class="link-icon icon-ig"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#8a6840" stroke="none"/></svg></div>
-      <div class="link-text"><span class="link-title">Instagram</span><span class="link-sub">看更多日常與作品動態</span></div>
-      <span class="link-arrow">›</span>
-    </a>
-    <a class="link-btn" href="https://line.me/R/ti/p/@037ixlky" target="_blank">
-      <div class="link-icon icon-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5C21 16.75 16.97 21 12 21c-1.5 0-2.9-.35-4.14-.97L3 21l1.04-3.7A9.1 9.1 0 0 1 3 11.5C3 6.25 7.03 2 12 2s9 4.25 9 9.5z"/><path d="M8 10.5h.01M12 10.5h.01M16 10.5h.01" stroke-width="2.5"/></svg></div>
-      <div class="link-text"><span class="link-title">LINE 官方帳號</span><span class="link-sub">預約 / 專人服務請加 LINE</span></div>
-      <span class="link-arrow">›</span>
-    </a>
-  </div>
-
-  <!-- 第三區：課程資訊 -->
-  <div class="section-label label-course">課程資訊</div>
-  <div class="links">
-    <button class="link-btn" onclick="showPage('page-fullcourse')">
-      <div class="link-icon icon-course"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M2 8v6"/><path d="M6 10.5v5.5a6 6 0 0 0 12 0v-5.5"/></svg></div>
-      <div class="link-text"><span class="link-title">美甲全科班</span><span class="link-sub">從零到開業完整養成</span></div>
-      <span class="link-arrow">›</span>
-    </button>
-    <button class="link-btn" onclick="showPage('page-course')">
-      <div class="link-icon icon-course"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M2 8v6"/><path d="M6 10.5v5.5a6 6 0 0 0 12 0v-5.5"/></svg></div>
-      <div class="link-text"><span class="link-title">美甲一日體驗班</span><span class="link-sub">零基礎歡迎・工具全包</span></div>
-      <span class="link-arrow">›</span>
-    </button>
-    <button class="link-btn" onclick="showPage('page-quiz')" style="background:linear-gradient(135deg,#faf5ea,#f3ead6);border-color:rgba(201,169,110,0.4);">
-      <div class="link-icon icon-course"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l1.9 1.9M16.5 16.5l1.9 1.9M18.4 5.6l-1.9 1.9M7.5 16.5l-1.9 1.9"/></svg></div>
-      <div class="link-text"><span class="link-title">我適合哪一種課？</span><span class="link-sub">30 秒測驗・幫你選對課</span></div>
-      <span class="link-arrow">›</span>
-    </button>
-    <button class="link-btn" onclick="showPage('page-qa')">
-      <div class="link-icon icon-qa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="17" r=".5" fill="#8a6840" stroke="none"/></svg></div>
-      <div class="link-text"><span class="link-title">課程常見問題</span><span class="link-sub">報名・上課相關說明</span></div>
-      <span class="link-arrow">›</span>
-    </button>
-  </div>
-
-  <!-- 第四區：常見問題 -->
-  <div class="section-label label-faq">常見問題</div>
-  <div class="links">
-    <button class="link-btn" onclick="showPage('page-general-qa')">
-      <div class="link-icon icon-qa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="17" r=".5" fill="#8a6840" stroke="none"/></svg></div>
-      <div class="link-text"><span class="link-title">預約 / 到店常見問題</span><span class="link-sub">預約、施作、保固說明</span></div>
-      <span class="link-arrow">›</span>
-    </button>
   </div>
 
   <div class="footer">QK NAIL ART · 新北市三重</div>
@@ -549,7 +659,9 @@ body {
   <div class="qz-body" id="qzBody">
     <div class="qz-count">Q<b id="qzNum">1</b> <span>/ 5</span></div>
     <div class="qz-q" id="qzQ"></div>
+    <div class="qz-hint" id="qzHint">✦ 可以複選，最多選 2 個 ✦</div>
     <div class="qz-opts" id="qzOpts"></div>
+    <button class="qz-next" id="qzNext" disabled>下一題 ›</button>
     <button class="qz-back" id="qzBack" hidden>‹ 上一題</button>
   </div>
 
@@ -1081,11 +1193,22 @@ var PAGE_HASHES = {
   'quiz':       'page-quiz'
 };
 
+// 首頁四大區塊的直達代號：網址結尾加 #find 就會開首頁並捲到「找到我們」
+var SECTION_HASHES = {
+  'find':    'sec-find',     // 找到我們
+  'contact': 'sec-contact',  // 聯絡我們
+  'courses': 'sec-course',   // 課程資訊
+  'qa':      'sec-faq'       // 常見問題
+};
+
 function showPage(id, updateHash) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   var target = document.getElementById(id);
   if (target) target.classList.add('active');
   window.scrollTo(0,0);
+
+  // 測驗頁使用專屬的活潑背景，其他頁維持原本色調
+  document.body.classList.toggle('quiz-mode', id === 'page-quiz');
 
   // 同步更新網址列的 #代號（預設會更新；從網址載入時傳 false 避免重複）
   if (updateHash !== false) {
@@ -1107,12 +1230,22 @@ function showPage(id, updateHash) {
   }
 }
 
-// 依照網址結尾的 #代號，打開對應頁面
+// 依照網址結尾的 #代號，打開對應頁面（或捲到首頁的對應區塊）
 function openPageFromHash() {
   var hash = location.hash.replace('#', '').toLowerCase();
   var pageId = PAGE_HASHES[hash];
   if (pageId) {
     showPage(pageId, false);
+    return;
+  }
+  // 首頁區塊代號：先回首頁，再平滑捲到那一區
+  var secId = SECTION_HASHES[hash];
+  if (secId) {
+    showPage('page-home', false);
+    setTimeout(function () {
+      var el = document.getElementById(secId);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 120);
   }
 }
 
@@ -1225,11 +1358,13 @@ function filterFAQ() {
   });
 })();
 
-/* ═══════════ 適性測驗 ═══════════ */
+/* ═══════════ 適性測驗（可複選版）═══════════ */
 (function initQuiz() {
   // lean: 'day' 一日體驗傾向 / 'full' 全科班傾向；pts 分數
+  // 每題可複選，最多選 MAX_PICK 個
+  var MAX_PICK = 2;
   var QUESTIONS = [
-    { q:'你來上課，最主要想得到的是？', opts:[
+    { q:'你來上課，最想得到的是？', opts:[
       { t:'一個放鬆的下午，體驗看看美甲', lean:'day', pts:2 },
       { t:'完成一份自己的作品帶回家紀念', lean:'day', pts:2 },
       { t:'一套能實際接客的完整技術', lean:'full', pts:2 },
@@ -1243,10 +1378,14 @@ function filterFAQ() {
     ]},
     { q:'你願意投入的學習時間是？', opts:[
       { t:'一天就好，輕鬆體驗流程', lean:'day', pts:2 },
+      { t:'有空的時候玩玩就好', lean:'day', pts:1 },
+      { t:'可以定期上課，慢慢累積', lean:'full', pts:1 },
       { t:'長期、有系統地一路學到會', lean:'full', pts:2 }
     ]},
     { q:'關於預算，你的想法比較像？', opts:[
       { t:'先花小錢試水溫再說', lean:'day', pts:2 },
+      { t:'想先了解內容再評估', lean:'day', pts:1 },
+      { t:'值得的話願意投資', lean:'full', pts:1 },
       { t:'準備好認真投資這項技能', lean:'full', pts:2 }
     ]},
     { q:'學完之後，你最希望能夠？', opts:[
@@ -1259,30 +1398,33 @@ function filterFAQ() {
 
   var RESULTS = {
     day: {
-      title:'從「一日體驗班」開始最適合你',
+      title:'從「一日體驗班」開始最適合你 🌸',
       lead:'先輕鬆體驗，喜歡了再往下走',
-      whyTag:'為什麼推薦一日體驗班',
+      whyTag:'🎀 為什麼推薦一日體驗班',
       why:'你的答案顯示，你現在更想「先體驗、先認識」，還不確定要不要把美甲當成職業。一日體驗班就是為零基礎、想培養興趣、或還在觀望的人設計的——工具材料全備，在自己手上實作，完課還有結業證書。',
       alt:'如果體驗完發現真的愛上了，隨時可以再進階到全科班，把基礎好好打起來。',
       btn:'看一日體驗班介紹 ›', page:'page-course'
     },
     full: {
-      title:'你已經準備好走「全科創業班」了',
+      title:'你已經準備好走「全科創業班」了 ✨',
       lead:'目標明確，適合直接把完整技術學起來',
-      whyTag:'為什麼推薦全科班',
+      whyTag:'💎 為什麼推薦全科班',
       why:'你的答案指向明確的職涯目標——想接案、轉職或創業。全科班從零開始系統規劃，除了甲片練習還有真人實作，課後也能持續問技術問題，幫你更快進入市場。',
       alt:'若還想先試手感，也可以先上一日體驗班熱身；不過以你的目標，直接進全科班會更省時間與預算。',
       btn:'看全科班完整內容 ›', page:'page-fullcourse'
     },
     mix: {
-      title:'你剛好站在兩者的交界',
+      title:'你剛好站在兩者的交界 🌷',
       lead:'兩條路都合理，建議先聊聊再決定',
-      whyTag:'我們的建議',
+      whyTag:'💬 我們的建議',
       why:'你的傾向蠻平均的——一部分想輕鬆體驗，一部分又想認真發展。這種情況我們不會急著推課，建議先跟我們聊聊你的學習目標：只是想體驗、培養興趣，就從一日體驗班開始；若確定要成為美甲師、接案或創業，再直接報名全科班。',
       alt:'我們會依你的需求給建議，不會為了推課而推薦不適合你的課程，讓預算花在最適合的規劃上。',
       btn:'看課程常見問題 ›', page:'page-qa'
     }
   };
+
+  // 每顆指甲一個顏色，答完會變成一排彩色指甲（奶茶玫瑰系）
+  var NAIL_COLORS = ['#e4a3b6', '#e7c297', '#d9c3e0', '#a9cbb7', '#c9a96e'];
 
   var nailsEl = document.getElementById('qzNails');
   var bodyEl  = document.getElementById('qzBody');
@@ -1291,28 +1433,29 @@ function filterFAQ() {
   var qEl     = document.getElementById('qzQ');
   var optsEl  = document.getElementById('qzOpts');
   var backEl  = document.getElementById('qzBack');
+  var nextEl  = document.getElementById('qzNext');
+  var hintEl  = document.getElementById('qzHint');
   if (!nailsEl) return;
 
   var current = 0;
-  var answers = [];
-  for (var i = 0; i < QUESTIONS.length; i++) answers.push(null);
+  var answers = [];           // answers[i] = 已選的選項 index 陣列，如 [0,2]
+  for (var i = 0; i < QUESTIONS.length; i++) answers.push([]);
 
   // 建立指甲
   var nailNodes = [];
   for (var n = 0; n < QUESTIONS.length; n++) {
     var d = document.createElement('div');
     d.className = 'qz-nail';
+    d.style.setProperty('--nail-c', NAIL_COLORS[n % NAIL_COLORS.length]);
     d.innerHTML = '<span class="qz-p"></span>';
     nailsEl.appendChild(d);
     nailNodes.push(d);
   }
 
-  function allDone() { return answers.every(function (a) { return a !== null; }); }
-
-  function paintNails() {
+  function paintNails(finished) {
     nailNodes.forEach(function (node, idx) {
-      node.classList.toggle('done', answers[idx] !== null);
-      node.classList.toggle('active', idx === current && !allDone());
+      node.classList.toggle('done', finished || answers[idx].length > 0);
+      node.classList.toggle('active', !finished && idx === current);
     });
   }
 
@@ -1323,26 +1466,42 @@ function filterFAQ() {
     optsEl.innerHTML = '';
     Q.opts.forEach(function (o, idx) {
       var b = document.createElement('button');
-      var chosen = answers[current] && answers[current].idx === idx;
+      var chosen = answers[current].indexOf(idx) !== -1;
       b.className = 'qz-opt' + (chosen ? ' sel' : '');
       b.innerHTML = '<span class="qz-dot"></span><span>' + o.t + '</span>';
-      b.addEventListener('click', function () { choose(idx, o); });
+      b.addEventListener('click', function () { togglePick(idx, b); });
       optsEl.appendChild(b);
     });
     backEl.hidden = (current === 0);
-    paintNails();
+    nextEl.textContent = (current === QUESTIONS.length - 1) ? '看結果 ✨' : '下一題 ›';
+    nextEl.disabled = answers[current].length === 0;
+    paintNails(false);
   }
 
-  function choose(idx, o) {
-    answers[current] = { idx: idx, lean: o.lean, pts: o.pts };
-    var kids = optsEl.children;
-    for (var k = 0; k < kids.length; k++) kids[k].classList.toggle('sel', k === idx);
-    paintNails();
-    setTimeout(function () {
-      if (current < QUESTIONS.length - 1) { current++; renderQuestion(); }
-      else finish();
-    }, 320);
+  function togglePick(idx, btn) {
+    var picked = answers[current];
+    var pos = picked.indexOf(idx);
+    if (pos !== -1) {
+      picked.splice(pos, 1);           // 取消選取
+      btn.classList.remove('sel');
+    } else if (picked.length < MAX_PICK) {
+      picked.push(idx);                // 新增選取
+      btn.classList.add('sel');
+    } else {
+      // 已達上限：提示閃一下
+      hintEl.classList.add('pulse');
+      setTimeout(function () { hintEl.classList.remove('pulse'); }, 250);
+      return;
+    }
+    nextEl.disabled = picked.length === 0;
+    paintNails(false);
   }
+
+  nextEl.addEventListener('click', function () {
+    if (answers[current].length === 0) return;
+    if (current < QUESTIONS.length - 1) { current++; renderQuestion(); window.scrollTo(0, 0); }
+    else finish();
+  });
 
   backEl.addEventListener('click', function () {
     if (current > 0) { current--; renderQuestion(); }
@@ -1350,7 +1509,12 @@ function filterFAQ() {
 
   function finish() {
     var day = 0, full = 0;
-    answers.forEach(function (a) { if (a.lean === 'day') day += a.pts; else full += a.pts; });
+    answers.forEach(function (picked, qi) {
+      picked.forEach(function (optIdx) {
+        var o = QUESTIONS[qi].opts[optIdx];
+        if (o.lean === 'day') day += o.pts; else full += o.pts;
+      });
+    });
     var total = day + full;
     var dayP = Math.round(day / total * 100);
     var fullP = 100 - dayP;
@@ -1374,7 +1538,7 @@ function filterFAQ() {
     document.getElementById('qzFullPct').textContent = fullP + '%';
 
     bodyEl.style.display = 'none';
-    nailNodes.forEach(function (node) { node.classList.add('done'); node.classList.remove('active'); });
+    paintNails(true);
     resultEl.classList.add('show');
     window.scrollTo(0, 0);
 
@@ -1382,11 +1546,30 @@ function filterFAQ() {
       document.getElementById('qzMDay').style.width = dayP + '%';
       document.getElementById('qzMFull').style.width = fullP + '%';
     }, 60);
+
+    dropConfetti();
+  }
+
+  // 結果彩帶：輕量版，3 秒後自動清掉
+  function dropConfetti() {
+    var colors = ['#d98ba3', '#e7c297', '#d9c3e0', '#a9cbb7', '#c9a96e', '#e4a3b6'];
+    for (var c = 0; c < 36; c++) {
+      var p = document.createElement('div');
+      p.className = 'qz-confetti';
+      p.style.left = (Math.random() * 100) + 'vw';
+      p.style.background = colors[c % colors.length];
+      p.style.animationDuration = (1.6 + Math.random() * 1.4) + 's';
+      p.style.animationDelay = (Math.random() * 0.5) + 's';
+      document.body.appendChild(p);
+    }
+    setTimeout(function () {
+      document.querySelectorAll('.qz-confetti').forEach(function (el) { el.remove(); });
+    }, 3600);
   }
 
   document.getElementById('qzRetry').addEventListener('click', function () {
     current = 0;
-    for (var r = 0; r < answers.length; r++) answers[r] = null;
+    for (var r = 0; r < answers.length; r++) answers[r] = [];
     resultEl.classList.remove('show');
     bodyEl.style.display = 'flex';
     document.getElementById('qzMDay').style.width = '0';
@@ -1396,6 +1579,16 @@ function filterFAQ() {
   });
 
   renderQuestion();
+})();
+
+/* 首頁課程小卡縮圖：直接借用課程頁已內嵌的 DM 圖，不重複佔空間 */
+(function initCourseThumbs() {
+  var fullImg = document.querySelector('img[alt="美甲全科班"]');
+  var oneImg  = document.querySelector('img[alt="美甲一日體驗班"]');
+  var tFull = document.getElementById('thumbFull');
+  var tOne  = document.getElementById('thumbOne');
+  if (fullImg && tFull) tFull.src = fullImg.src;
+  if (oneImg && tOne)  tOne.src  = oneImg.src;
 })();
 </script>
 </body>
